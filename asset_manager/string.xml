@@ -1,0 +1,30 @@
+<file version="0.1">
+<text-array alias="greeting">
+<text>111111</text>
+<text>222222</text>
+<text>333333</text>
+<text>444444</text>
+</text-array>
+
+<text-array alias="hello">
+<text>111111</text>
+<text>222222</text>
+<text>333333</text>
+<text>444444</text>
+</text-array>
+
+<text-array alias="world">
+<text>111111</text>
+<text>222222</text>
+<text>333333</text>
+<text>444444</text>
+</text-array>
+
+<text alias="111">Hello,world</text>
+<text alias="222">Hello,world</text>
+<text alias="333">Hello,world</text>
+<text alias="444">Hello,world</text>
+<text alias="555">Hello,world</text>
+<text alias="666">Hello,world</text>
+
+</file>
