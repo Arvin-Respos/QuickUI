@@ -1,0 +1,1 @@
+canio:CAN:can0:125000
