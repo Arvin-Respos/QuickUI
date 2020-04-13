@@ -1,9 +1,9 @@
 维持三组6个Hash表来存储全部资源数据。
 所有资源都以"key-value"的方式存放在Hash表中，key即是别名，value在管理颜色及文本时分别是文本内容和颜色值，管理图片时则是图片名称，支持URL路径。
 取图片、文本及颜色资源时，分别以以下方式：
-@image/[alias]
-@text/[alias]
-@color/[alias]
+-@image/[alias]<br>
+-@text/[alias]
+-@color/[alias]
 
 [alias]即是资源的别名。
 
