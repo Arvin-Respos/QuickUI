@@ -40,7 +40,7 @@ QVariant AssetManager::getResource(QString key,int index)
             return m_MultiImages.value (strKey.at (1)).at (index);
         }
 
-       return "Undef";
+       return "Undefine";
 }
 
 void AssetManager::initTexts(QString &strFileName)

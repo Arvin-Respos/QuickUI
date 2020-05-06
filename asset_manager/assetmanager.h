@@ -13,9 +13,13 @@
 #include <QFile>
 #include <QStringRef>
 
-class AssetManager
+#include <QQmlEngine>
+
+class AssetManager:public QObject
 {
+  Q_OBJECT
 public:
+  AssetManager();
   ~AssetManager() {
   }
   /**
@@ -26,20 +30,13 @@ public:
    * @param index  当需要获取组资源的时候，会把组中序号为index的那一个取出来，默认为0
    * @return 返回文本内容、颜色值、图片路径等
    */
-  QVariant getResource(QString key,int index = 0);
+  Q_INVOKABLE QVariant getResource(QString key,int index = 0);
 
 private:
-  AssetManager();
   void init();
   void initTexts(QString &strFileName);
   void initImages(QString &strFileName);
   void initColors(QString &strFileName);
-
- public:
-  static AssetManager &getInstance(){
-      static AssetManager _instance;
-      return _instance;
-  }
 
  private:
   //文本
@@ -54,5 +51,13 @@ private:
   QHash<QString,QColor> m_singleColor;        //可变的单颜色文件资源
   QHash< QString,QList<QColor> > m_MultiColors;        //可变的颜色组文件资源
 };
+
+static QObject *assetmanager_provider(QQmlEngine *engine, QJSEngine *scriptEngine)
+{
+    Q_UNUSED (engine)
+    Q_UNUSED (scriptEngine)
+    AssetManager *pInstance = new AssetManager;
+    return pInstance;
+}
 
 #endif // ASSETMANAGER_H
