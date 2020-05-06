@@ -1,19 +1,19 @@
 维持三组6个Hash表来存储全部资源数据。
 所有资源都以"key-value"的方式存放在Hash表中，key即是别名，value在管理颜色及文本时分别是文本内容和颜色值，管理图片时则是图片名称，支持URL路径。
-取图片、文本及颜色资源时，分别以以下方式：
--@image/[alias]<br>
--@text/[alias]
--@color/[alias]
+取图片、文本及颜色资源时，分别以以下方式:<br>
+    @image/[alias]<br>
+    @text/[alias]<br>
+    @color/[alias]<br>
 
 [alias]即是资源的别名。
 
 资源管理器分别读取下列3个xml文件的内容，并存储在上述Hash中。
-三个xml文件分别如下：
-string.xml 存储文本内容
-image.xml存储图片
-color.xml存储颜色
+三个xml文件分别如下：<br>
+string.xml 存储文本内容<br>
+image.xml存储图片<br>
+color.xml存储颜色<br>
 
-string.xml文本内容如下:
+string.xml文本内容如下:<br>
 单独文本:<br>
 ```
 <file version="0.1">
@@ -32,7 +32,7 @@ string.xml文本内容如下:
 </file>
 ```
 
-image.xml文本内容如下:
+image.xml文本内容如下:<br>
 单独图片:<br>
 ```
 <file version="0.1">
@@ -51,7 +51,7 @@ image.xml文本内容如下:
 </file>
 ```
 
-color.xml文本内容如下:
+color.xml文本内容如下:<br>
 单独颜色:<br>
 ```
 <file version="0.1">
