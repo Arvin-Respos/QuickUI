@@ -3,8 +3,8 @@
 控件名称|描述及说明
 :--:|--
 KImage|显示普通图片。有如下属性:<br>src: url类型，指定图片的源<br>fitType: 拉伸还是平铺<br>
-KStationImage|显示站点关联图片，即跟随站点变化的图片。有如下属性:<br>src: url类型，指定图片的源<br>index: 源中的索引号<br>
-KLabel|显示普通文本的标签控件。有如下属性:<br>hAlignment: 水平对齐方式<br>vAlignment: 竖直对齐方式<br>rotate: 旋转角度<br>text: 文本内容，可以是文本字面值也可以是url地址<br>font: 字体相关，指定显示的文本字体<br>textColor: 指定字体的颜色<br>
+KStationImage|显示站点关联图片，即跟随站点变化的图片。有如下属性:<br>fitType: 拉伸还是平铺<br>src: url类型，指定图片的源<br>index: 源中的索引号<br>
+KLabel|显示普通文本的标签控件。有如下属性:<br>hAlignment: 水平对齐方式<br>vAlignment: 竖直对齐方式<br>rotate: 旋转角度<br>textString: 文本内容，可以是文本字面值也可以是url地址<br>font: 字体相关，指定显示的文本字体<br>textColor: 指定字体的颜色<br>
 KStationLabel|显示站点关联文本的标签。有如下属性:<br>hAlignment: 水平对齐方式<br>vAlignment: 竖直对齐方式<br>rotate: 旋转角度<br>text: 文本的源，为url<br>index: 文本在源中的站点索引<br>font: 字体相关，指定显示的文本字体<br>textColor: 指定字体的颜色<br>
 KMediaPlayer|显示视频播放器窗口的标签。有如下属性:<br>src: 视频源，url地址<br>status: 播放、停止等状态<br>
 KPathSlider|显示线路路径的控件。有如下属性:<br>foreColor: 未过站颜色<br>backColor: 已经过站的颜色<br>count: 站点个数<br>

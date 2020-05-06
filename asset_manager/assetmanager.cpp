@@ -18,29 +18,42 @@ AssetManager::AssetManager()
 
 QVariant AssetManager::getResource(QString key,int index)
 {
+      if( !key.contains ("@") )
+        return key;
+
       QStringList strKey = key.split ("@");
+//      qDebug("AssetManager::getResource strKey:%s index:%d",strKey.at (1).toStdString ().c_str(),index);
 
       if(key.startsWith ("text@")) {
 
           return m_singleString.value (strKey.at (1));
         }else if(key.startsWith ("text-array@")) {
-
-            return m_MultiStr.value (strKey.at (1)).at (index);
+            QList<QString> list = m_MultiStr.value (strKey.at (1));
+            if(list.size () <= index) {
+                return "Undefined";
+              }
+            return list.at (index);
         }else if(key.startsWith ("image@")) {
 
             return m_singleImage.value (strKey.at (1));
         }else if(key.startsWith ("image-array@")) {
-
+          QList<QUrl> list = m_MultiImages.value (strKey.at (1));
+          if(list.size () <= index) {
+              return "Undefined";
+            }
             return m_MultiImages.value (strKey.at (1)).at (index);
         }else if(key.startsWith ("color@")) {
 
-            return m_singleImage.value (strKey.at (1));
+            return m_singleColor.value (strKey.at (1));
         }else if(key.startsWith ("color-array@")) {
-
-            return m_MultiImages.value (strKey.at (1)).at (index);
+          QList<QColor> list = m_MultiColors.value (strKey.at (1));
+          if(list.size () <= index) {
+              return "Undefined";
+            }
+            return m_MultiColors.value (strKey.at (1)).at (index);
         }
 
-       return "Undefine";
+       return "Undefined";
 }
 
 void AssetManager::initTexts(QString &strFileName)
@@ -245,16 +258,15 @@ void AssetManager::init()
     //解析配置文件
 //  QString dirPath = QString::fromLocal8Bit (qgetenv ("RESFILE_DIR"));
 
-
   //解析文本资源
   QString txtFile = /*dirPath + */"string.xml";
   initTexts(txtFile);
 
   //解析图片资源
-//  QString imageFile = dirPath + "image/image.xml";
-//  initImages(imageFile);
+  QString imageFile = /*dirPath + */"image.xml";
+  initImages(imageFile);
 
   //解析颜色资源
-//  QString colorFile = dirPath + "color/color.xml";
-//  initColors(colorFile);
+  QString colorFile = /*dirPath + */"color.xml";
+  initColors(colorFile);
 }
